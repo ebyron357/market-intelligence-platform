@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ΔLTERNATIVE</title>
+    <style>
+        :root {
+            --bg-color: #fcfcfc;
+            --text-primary: #111111;
+            --text-secondary: #666666;
+            --accent: #7a7a7a;
+            --max-width: 650px;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-primary);
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            letter-spacing: -0.01em;
+            line-height: 1.6;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            padding: 40px 24px;
+        }
+
+        .container {
+            width: 100%;
+            max-width: var(--max-width);
+            opacity: 0;
+            animation: fadeIn 1.2s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+        }
+
+        header {
+            margin-bottom: 64px;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+        }
+
+        .logo-wrapper {
+            position: relative;
+            width: 48px;
+            height: 48px;
+            margin-bottom: 32px;
+        }
+
+        /* Pure CSS Delta with Offset Point */
+        .delta-symbol {
+            width: 0;
+            height: 0;
+            border-left: 24px solid transparent;
+            border-right: 24px solid transparent;
+            border-bottom: 41.5px solid var(--text-primary);
+            position: relative;
+        }
+
+        .delta-symbol::before {
+            content: '';
+            position: absolute;
+            top: 6px;
+            left: -18px;
+            width: 0;
+            height: 0;
+            border-left: 18px solid transparent;
+            border-right: 18px solid transparent;
+            border-bottom: 31.2px solid var(--bg-color);
+        }
+
+        .offset-point {
+            position: absolute;
+            width: 5px;
+            height: 5px;
+            background-color: var(--text-primary);
+            border-radius: 50%;
+            bottom: -32px;
+            left: 2px;
+            z-index: 2;
+        }
+
+        h1 {
+            font-size: 1.5rem;
+            font-weight: 500;
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+            color: var(--text-primary);
+        }
+
+        .manifesto {
+            display: flex;
+            flex-direction: column;
+            gap: 32px;
+        }
+
+        .section {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+
+        .line {
+            font-size: 1.125rem;
+            font-weight: 400;
+            color: var(--text-primary);
+        }
+
+        .line.dim {
+            color: var(--text-secondary);
+        }
+
+        .line.emphasize {
+            font-weight: 500;
+        }
+
+        footer {
+            margin-top: 80px;
+            padding-top: 24px;
+            border-top: 1px solid #eaeaea;
+        }
+
+        .copyright {
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            color: var(--text-secondary);
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(10px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @media (max-width: 480px) {
+            body {
+                padding: 32px 20px;
+            }
+            header {
+                margin-bottom: 48px;
+            }
+            .line {
+                font-size: 1.05rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <header>
+            <div class="logo-wrapper">
+                <div class="delta-symbol"></div>
+                <div class="offset-point"></div>
+            </div>
+            <h1>Δlternative</h1>
+        </header>
+
+        <main class="manifesto">
+            <div class="section">
+                <p class="line dim">Not opposition.</p>
+                <p class="line dim">Not rebellion.</p>
+                <p class="line dim">Not another version of the same thing.</p>
+            </div>
+
+            <div class="section">
+                <p class="line emphasize">Alternative is the discovery of a position that did not previously exist.</p>
+            </div>
+
+            <div class="section">
+                <p class="line">Where others see a choice between two paths, we see the possibility of a third.</p>
+                <p class="line dim">A more thoughtful direction.</p>
+                <p class="line dim">A more balanced perspective.</p>
+                <p class="line dim">A more intentional way forward.</p>
+            </div>
+
+            <div class="section">
+                <p class="line">Our symbol is the Delta—a timeless mark of change, transformation, and progress.</p>
+                <p class="line">Within it sits a single offset point.</p>
+                <p class="line dim">A subtle expression of independent thought.</p>
+                <p class="line dim">A reminder that the most meaningful breakthroughs rarely emerge from established positions.</p>
+            </div>
+
+            <div class="section">
+                <p class="line emphasize">It is the mark of those who choose with purpose.</p>
+                <p class="line">Those who question without rejecting.</p>
+                <p class="line">Who evolve without conforming.</p>
+                <p class="line">Who seek alignment over acceptance.</p>
+            </div>
+
+            <div class="section">
+                <p class="line dim">Alternative is not about standing apart.</p>
+                <p class="line dim">It is about seeing differently.</p>
+                <p class="line emphasize">Finding a new center of gravity.</p>
+                <p class="line">And moving toward it with intention.</p>
+            </div>
+        </main>
+
+        <footer>
+            <div class="copyright">© 2026 ΔLTERNATIVE</div>
+        </footer>
+    </div>
+
+</body>
+</html>
